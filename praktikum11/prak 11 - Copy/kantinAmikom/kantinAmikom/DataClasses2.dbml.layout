@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses2">
+  <DataContextMoniker Name="/DataClasses2DataContext" />
+  <nestedChildShapes>
+    <classShape Id="f3d0ac76-6853-4370-9d83-45a50dc59565" absoluteBounds="5.625, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses2DataContext/admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62b434f4-f381-4629-8aa7-b9a216130e98" absoluteBounds="5.6400000000000006, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11712238-c3e1-4e20-b7f6-328afef212a9" absoluteBounds="3.25, 2.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses2DataContext/customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d3b9402-0207-4be8-9aa5-94133ffea8c0" absoluteBounds="3.2650000000000006, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd0af160-4f8d-4532-9de5-4a4dba373949" absoluteBounds="0.5, 1.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses2DataContext/detailTransaksi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d13ec04-1a75-4fee-812a-034fd324c802" absoluteBounds="0.51500000000000012, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82bd8e6c-4e25-4927-a00e-d0000b0b6e48" absoluteBounds="0.5, 4.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses2DataContext/menu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00261fff-6721-4b48-9c52-5bf45bdd06b5" absoluteBounds="0.515, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 4.375); (1.5 : 3.06899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses2DataContext/menu/menu_detailTransaksi" />
+      <nodes>
+        <classShapeMoniker Id="82bd8e6c-4e25-4927-a00e-d0000b0b6e48" />
+        <classShapeMoniker Id="fd0af160-4f8d-4532-9de5-4a4dba373949" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7e4f8bd0-c70e-49df-bc7f-7ec1fed31666" absoluteBounds="5.625, 3.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses2DataContext/pedagang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c69df0f5-e414-427d-b2a8-4038e903a4a1" absoluteBounds="5.6400000000000006, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eddc040c-9232-475a-8c0c-7294f6f4d658" absoluteBounds="3.25, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses2DataContext/transaksi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="841fc57e-b6d6-42f5-a0eb-95ad3d5b28c5" absoluteBounds="3.265, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 1.1874995); (1.5 : 1.1874995); (1.5 : 1.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses2DataContext/transaksi/transaksi_detailTransaksi" />
+      <nodes>
+        <classShapeMoniker Id="eddc040c-9232-475a-8c0c-7294f6f4d658" />
+        <classShapeMoniker Id="fd0af160-4f8d-4532-9de5-4a4dba373949" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 2.875); (4.25 : 2.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses2DataContext/customer/customer_transaksi" />
+      <nodes>
+        <classShapeMoniker Id="11712238-c3e1-4e20-b7f6-328afef212a9" />
+        <classShapeMoniker Id="eddc040c-9232-475a-8c0c-7294f6f4d658" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="kantinAmikom" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=Z4WIND\SQLEXPRESS;Initial Catalog=kantinAmikom;Integrated Security=True" SettingsObjectName="kantinAmikom.Properties.Settings" SettingsPropertyName="sqlconnection" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.admin" Member="admins">
+    <Type Name="admin">
+      <Column Name="userId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer" Member="customers">
+    <Type Name="customer">
+      <Column Name="idCustomer" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="namaCustomer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nominalIsi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="customer_transaksi" Member="transaksis" ThisKey="idCustomer" OtherKey="idCustomer" Type="transaksi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.detailTransaksi" Member="detailTransaksis">
+    <Type Name="detailTransaksi">
+      <Column Name="idTransaksi" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idMenu" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="menu_detailTransaksi" Member="menu" ThisKey="idMenu" OtherKey="idMenu" Type="menu" IsForeignKey="true" />
+      <Association Name="transaksi_detailTransaksi" Member="transaksi" ThisKey="idTransaksi" OtherKey="idTransaksi" Type="transaksi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.menu" Member="menus">
+    <Type Name="menu">
+      <Column Name="idMenu" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="namaMenu" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="harga" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="menu_detailTransaksi" Member="detailTransaksis" ThisKey="idMenu" OtherKey="idMenu" Type="detailTransaksi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pedagang" Member="pedagangs">
+    <Type Name="pedagang">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nama" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="alamat" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.transaksi" Member="transaksis">
+    <Type Name="transaksi">
+      <Column Name="idTransaksi" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tglTransaksi" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idCustomer" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="transaksi_detailTransaksi" Member="detailTransaksis" ThisKey="idTransaksi" OtherKey="idTransaksi" Type="detailTransaksi" />
+      <Association Name="customer_transaksi" Member="customer" ThisKey="idCustomer" OtherKey="idCustomer" Type="customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
