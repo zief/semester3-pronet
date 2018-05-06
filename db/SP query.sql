@@ -1,0 +1,2 @@
+create procedure ADDMENU @id varchar (5), @nama varchar(40), @harga int as  if exists(select * from menu where idMenu = @id)  update menu set namaMenu = @nama, harga = @harga   where idMenu = @id else  insert into menu values(@id,@nama,@harga)  
+create procedure DELMENU @id varchar (5) as  delete from menu where idMenu = @id
